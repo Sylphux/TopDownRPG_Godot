@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="TopDownRPG"
-run/main_scene="uid://dbmnfhisy3knm"
+run/main_scene="uid://bhplih85bjiq2"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/scale=4.01
 
 [physics]
 

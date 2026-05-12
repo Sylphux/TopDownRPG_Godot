@@ -427,13 +427,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1642636344]
-script = ExtResource("1_g2els")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 4.0
+height = 12.09
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=148011170]
+[node name="Player" type="CharacterBody2D" unique_id=1642636344]
+y_sort_enabled = true
+script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1617119348]
 sprite_frames = SubResource("SpriteFrames_smehm")
-animation = &"back_attack"
-frame = 1
-frame_progress = 0.30690017
+animation = &"front_idle"
+frame = 4
+frame_progress = 0.25836322
+offset = Vector2(0, -15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=148011170]
+position = Vector2(0.51, -4.01)
+shape = SubResource("CapsuleShape2D_g2els")
