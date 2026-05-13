@@ -23,14 +23,23 @@ texture = ExtResource("1_4wyf3")
 5:1/0 = 0
 5:0/0 = 0
 1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.5395756, -0.71943474, 8, -4.4964676, 8, 8, -5.75548, 8)
 2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.956891, 8, -3.5971737, 8, 8, -8, 8)
 3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.6763268, 1.978445, -4.13675, 5.935339, 8, -8, 8)
 3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 5.2159023, -8, 5.935339, 8, -8, 8)
 3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.4749146, -8, 6.4749146, 5.215904, -8, 6.4749146)
 2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.4749146, -8, 6.4749146, 5.215904, -8, 5.215904)
 1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.115197, -8, 8, -8, 8, 6.115198, -3.4173155, 5.75548)
 1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.2950554, -8, 8, -8, 8, 8, -5.3957615, 8)
 2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:4/0 = 0
 4:5/0 = 0
 5:5/0 = 0
@@ -78,6 +87,9 @@ sources/0 = SubResource("TileSetAtlasSource_qfnet")
 sources/1 = SubResource("TileSetAtlasSource_i7141")
 sources/2 = SubResource("TileSetAtlasSource_4mrxx")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfnet"]
+size = Vector2(134, 28)
+
 [node name="World" type="Node2D" unique_id=924746390]
 y_sort_enabled = true
 script = ExtResource("1_qfnet")
@@ -95,7 +107,22 @@ layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(327691, 2, 5, 262160, 2, 5, 655378, 2, 5, 720903, 2, 5, 458755, 2, 5, 786452, 655362, 7, 786433, 655362, 7, 720902, 2, 1, 655377, 2, 1, 786447, 2, 1, 393230, 2, 1, 327700, 2, 1, 65545, 2, 1, 262154, 524290, 6, 65547, 524290, 6, 196630, 524290, 6, 131077, 2, 0, 655385, 327682, 0)
 
 [node name="Player" parent="." unique_id=1642636344 instance=ExtResource("4_k0juu")]
-position = Vector2(85, 77)
+position = Vector2(259.425, 19.84)
 
 [node name="Enemy" parent="." unique_id=1645079211 instance=ExtResource("5_71j4m")]
 position = Vector2(189, 144)
+
+[node name="Collisions" type="StaticBody2D" parent="." unique_id=124267807]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions" unique_id=781899334]
+build_mode = 1
+polygon = PackedVector2Array(204, 0, 203, -28, 336, -27, 336, 1, 432, 1, 431, 223, 1, 223, 0, 2)
+
+[node name="CliffSideDoor" type="Area2D" parent="." unique_id=408933205]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CliffSideDoor" unique_id=853821628]
+position = Vector2(269, -19)
+shape = SubResource("RectangleShape2D_qfnet")
+
+[connection signal="body_entered" from="CliffSideDoor" to="." method="_on_cliff_side_door_body_entered"]
+[connection signal="body_exited" from="CliffSideDoor" to="." method="_on_cliff_side_door_body_exited"]

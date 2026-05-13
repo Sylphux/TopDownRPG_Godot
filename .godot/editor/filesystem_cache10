@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778628385
+::res://::1778671715
 icon.svg::CompressedTexture2D::6371708381687054112::1778540967::1778541007::1::::<><><>0<>0<>efe0a756165d3a5a9a9685d011e1b59d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 readme.md::TextFile::-1::1778540920::0::1::::<><><>0<>0<><>::
 ::res://assets/::1778541094
@@ -47,12 +47,12 @@ wooden.png::CompressedTexture2D::1119954576158001104::1715064788::1778541124::1:
 walls.png::CompressedTexture2D::5057232802340373209::1715064788::1778541124::1::::<><><>0<>0<>6ddc7585b5e42a14b8460c4ead4f36f9<>res://.godot/imported/walls.png-2ed5512c462efc1c7833a4bb9877458f.ctex::
 wooden_door.png::CompressedTexture2D::7809733758570525966::1715064788::1778541124::1::::<><><>0<>0<>ffe7392000e7753a5977483fca1c6d15<>res://.godot/imported/wooden_door.png-f43348d65798d1769e951f50da4575c8.ctex::
 wooden_door_b.png::CompressedTexture2D::970498319654316711::1715064788::1778541124::1::::<><><>0<>0<>e4a260dd1c25026d500315fc1d805233<>res://.godot/imported/wooden_door_b.png-53fdfb6a481c3305596bb5f693299829.ctex::
-::res://scenes/::1778634064
-enemy.tscn::PackedScene::799469469376038403::1778632729::0::1::::<><><>0<>0<><>::uid://t5ja5q1b2ksi::::res://assets/sprites/characters/slime.png<>uid://d3tm203ppblha::::res://scripts/enemy.gd
-player.tscn::PackedScene::7255022058514449934::1778633160::0::1::::<><><>0<>0<><>::uid://balci00iam8fg::::res://assets/sprites/characters/player.png<>uid://bvskkvcuv6f3o::::res://scripts/player.gd
-world.tscn::PackedScene::2909390848748654003::1778634098::0::1::::<><><>0<>0<><>::uid://b3s0wotar4wfe::::res://assets/sprites/tilesets/plains.png<>uid://dyjnnyj8rlj6l::::res://scenes/world.gd<>uid://bh7k2x4gf6nkr::::res://assets/sprites/tilesets/grass.png<>uid://nkn6s1mmrif8::::res://assets/sprites/objects/objects.png<>uid://dbmnfhisy3knm::::res://scenes/player.tscn<>uid://lnje7bdma6e6::::res://scenes/enemy.tscn
-::res://scripts/::1778632546
-enemy.gd::GDScript::9164551027659881330::1778632546::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://scenes/::1778635723
+enemy.tscn::PackedScene::799469469376038403::1778635540::0::1::::<><><>0<>0<><>::uid://t5ja5q1b2ksi::::res://assets/sprites/characters/slime.png<>uid://d3tm203ppblha::::res://scripts/enemy.gd
+player.tscn::PackedScene::7255022058514449934::1778635723::0::1::::<><><>0<>0<><>::uid://balci00iam8fg::::res://assets/sprites/characters/player.png<>uid://bvskkvcuv6f3o::::res://scripts/player.gd
+world.tscn::PackedScene::2909390848748654003::1778634507::0::1::::<><><>0<>0<><>::uid://b3s0wotar4wfe::::res://assets/sprites/tilesets/plains.png<>uid://dyjnnyj8rlj6l::::res://scripts/world.gd<>uid://bh7k2x4gf6nkr::::res://assets/sprites/tilesets/grass.png<>uid://nkn6s1mmrif8::::res://assets/sprites/objects/objects.png<>uid://dbmnfhisy3knm::::res://scenes/player.tscn<>uid://lnje7bdma6e6::::res://scenes/enemy.tscn
+::res://scripts/::1778635521
+enemy.gd::GDScript::9164551027659881330::1778635521::0::1::::<>CharacterBody2D<><>0<>0<><>::
 global.gd::GDScript::1774688377185493139::1778628149::0::1::::<>Node<><>0<>0<><>::
 player.gd::GDScript::3898171334549529250::1778630736::0::1::::<>CharacterBody2D<><>0<>0<><>::
-world.gd::GDScript::8863187510391519765::1778634090::0::1::::<>Node2D<><>0<>0<><>::
+world.gd::GDScript::8863187510391519765::1778634287::0::1::::<>Node2D<><>0<>0<><>::

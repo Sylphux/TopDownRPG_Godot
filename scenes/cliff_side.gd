@@ -1,17 +1,9 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var map_size = get_map_size()
 	$Player/Camera2D.limit_right = map_size[0]
 	$Player/Camera2D.limit_bottom = map_size[1]
-	if Global.player_first_load:
-		$Player.position.x = 85.0
-		$Player.position.y = 77.0
-	else:
-		$Player.position = Global.player_exit_cliffside_pos
-	Global.player_first_load = false
 
 func get_map_size():
 	var quadrant_s = $TileMap.rendering_quadrant_size
@@ -21,21 +13,18 @@ func get_map_size():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	change_scene()
+	change_scenes()
 
-
-func _on_cliff_side_door_body_entered(body: Node2D) -> void:
+func _on_world_door_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		Global.in_transition_scene = true
 
-
-func _on_cliff_side_door_body_exited(body: Node2D) -> void:
+#func _on_world_door_body_exited(body: Node2D) -> void:
 	#if body.has_method("player"):
 		#Global.in_transition_scene = false
-	pass
 		
-func change_scene():
+func change_scenes():
 	if Global.in_transition_scene:
-		if Global.current_scene == "World":
-			get_tree().change_scene_to_file("res://scenes/cliff_side.tscn")
+		if Global.current_scene == "CliffSide":
+			get_tree().change_scene_to_file("res://scenes/world.tscn")
 			Global.finish_changing_scene()
