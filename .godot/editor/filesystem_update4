@@ -5,3 +5,5 @@ res://scenes/enemy.gd
 res://scripts/player.gd
 res://scripts/enemy.gd
 res://scripts/global.gd
+res://scenes/world.gd
+res://scripts/world.gd

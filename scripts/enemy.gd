@@ -18,7 +18,16 @@ func _physics_process(delta: float) -> void:
 	anim_manager()
 	
 func movement_manager():
+	
 	if player_chase:
+		#var pos_diff = Vector2.ZERO
+		#pos_diff = abs((position - player.position))
+		#var closest = 10
+		#if pos_diff.x < pos_diff.y:
+			#closest = pos_diff.x
+		#else:
+			#closest = pos_diff.y
+		#if closest > 2:
 		position += (player.position - position)/speed
 
 func anim_manager():

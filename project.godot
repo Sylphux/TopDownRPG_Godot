@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 Global="*uid://0jw4ggd4bmx4"
 
-[display]
-
-window/stretch/scale=4.01
-
 [input]
 
 move_up={
