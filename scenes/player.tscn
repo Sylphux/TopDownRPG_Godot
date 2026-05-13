@@ -159,14 +159,6 @@ region = Rect2(96, 336, 48, 48)
 atlas = ExtResource("1_3vyb7")
 region = Rect2(144, 336, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hax0n"]
-atlas = ExtResource("1_3vyb7")
-region = Rect2(192, 336, 48, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t4otl"]
-atlas = ExtResource("1_3vyb7")
-region = Rect2(240, 336, 48, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_j2b1d"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(0, 48, 48, 48)
@@ -230,9 +222,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y4r1p")
 }],
-"loop": true,
+"loop": false,
 "name": &"back_attack",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -290,7 +282,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lxlsd")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -307,9 +299,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ujl30")
 }],
-"loop": true,
+"loop": false,
 "name": &"front_attack",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -369,16 +361,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jc3p3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hax0n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t4otl")
 }],
-"loop": true,
+"loop": false,
 "name": &"side_attack",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -431,17 +417,36 @@ animations = [{
 radius = 4.0
 height = 12.09
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
+radius = 6.52
+height = 22.08
+
 [node name="Player" type="CharacterBody2D" unique_id=1642636344]
 y_sort_enabled = true
+collision_layer = 3
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1617119348]
 sprite_frames = SubResource("SpriteFrames_smehm")
-animation = &"front_idle"
-frame = 4
-frame_progress = 0.25836322
+animation = &"side_attack"
 offset = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=148011170]
 position = Vector2(0.51, -4.01)
 shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="PlayerHitbox" type="Area2D" parent="." unique_id=493376835]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox" unique_id=167554035]
+position = Vector2(0.48, -6.655)
+shape = SubResource("CapsuleShape2D_qhqgy")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=93889633]
+
+[node name="DealAttackTimer" type="Timer" parent="." unique_id=1439363905]
+wait_time = 0.584
+
+[connection signal="body_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="PlayerHitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="DealAttackTimer" to="." method="_on_deal_attack_timer_timeout"]
